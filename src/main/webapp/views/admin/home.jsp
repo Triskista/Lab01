@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	trang chủ của admin
+	Trang Chủ Của ADMIN
 	<form action="/lab02/user/home" method="post">
 		<div class="container">
 			<button type="logout">Logout</button>

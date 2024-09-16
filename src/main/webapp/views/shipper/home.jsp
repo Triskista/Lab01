@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	Trang Chủ Của Shipper
+	Trang Chủ Của SHIPPER
 	<form action="/lab02/user/home" method="post">
 		<div class="container">
 			<button type="logout">Logout</button>
