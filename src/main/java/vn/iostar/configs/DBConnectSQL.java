@@ -13,37 +13,16 @@ public class DBConnectSQL {
 	private final String userID = "sa";
 	private final String password = "hokimtri041";
 
-	public Connection getConnection() {
-		Connection conn = null;
-		try {
-			String url = "jdbc:sqlserver://" + serverName + ":" + portNumber + "\\" + instance + ";databaseName="
-					+ dbName;
-			if (instance == null || instance.trim().isEmpty())
-				url = "jdbc:sqlserver://" + serverName  + ";databaseName=" + dbName;
-			conn = DriverManager.getConnection(url, userID, password);
-
-			if (conn != null) {
-				DatabaseMetaData dm = (DatabaseMetaData) conn.getMetaData();
-				System.out.print("Driver name: " + dm.getDriverName());
-				System.out.print("Driver version: " + dm.getDriverVersion());
-				System.out.print("Product name: " + dm.getDatabaseProductName());
-				System.out.print("Product version: " + dm.getDatabaseProductVersion());
-
-				return conn;
-			}
-		} catch (SQLException ex) {
-			ex.printStackTrace();
-		} /*finally {
-			try {
-				if (conn != null && !conn.isClosed()) {
-					conn.close();
-				}
-			} catch (SQLException ex) {
-				ex.printStackTrace();
-			}
-		}*/
-		return conn;
-	}	
+	public Connection getConnection() throws Exception {
+		String url = "jdbc:sqlserver://" + serverName + ":" + portNumber + "\\" + instance + ";databaseName="
+				+ dbName;
+		if (instance == null || instance.trim().isEmpty())
+			url = "jdbc:sqlserver://" + serverName  + ";databaseName=" + dbName;
+		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+		return DriverManager.getConnection(url, userID, password);
+				
+	
+}
 
 	public static void main(String[] args) {
 		try {

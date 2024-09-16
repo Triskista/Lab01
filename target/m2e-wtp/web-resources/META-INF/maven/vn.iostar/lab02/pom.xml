@@ -16,6 +16,16 @@
 			<version>9.4.1.jre16</version>
 		</dependency>
 
+		<dependency>
+			<groupId>vn.iotstar</groupId>
+			<artifactId>HelloWorld</artifactId>
+			<version>1.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>vn.iotstar</groupId>
+			<artifactId>ltwebst4</artifactId>
+			<version>1.1.0</version>
+		</dependency>
 	</dependencies>
 
 
